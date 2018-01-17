@@ -1,0 +1,19 @@
+.header{
+    height: 50px;
+    width: 100%;
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    border-bottom: 1px solid #ebebeb;
+}
+ .left {
+    /* flex:  */
+}
+.right{
+
+}
+.content{
+
+}

@@ -10,8 +10,8 @@
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <link rel="stylesheet" href="../node_modules/normalize.css/normalize.css">
+    <!-- <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico"> -->
+    <!-- <link rel="stylesheet" href="../node_modules/normalize.css/normalize.css"> -->
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -39,6 +39,31 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+      (function (doc, win) {
+        var docEl = doc.documentElement,
+          resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+          recalc = function () {
+            var clientWidth = docEl.clientWidth;
+            if (!clientWidth) return;
+            if (clientWidth >= 640) {
+              docEl.style.fontSize = '25px';
+              //doc.getElementsByClassName("container")[0].style.border = "1px solid #ebebeb";
+            } else {
+              docEl.style.fontSize = clientWidth * 0.05 + 'px';
+              console.log(docEl.style.fontSize);
+              //doc.getElementsByClassName("container")[0].style.border = "0"
+            }
+          };
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+      })(document, window);
+    </script>
+    <!-- 发布编译引用 -->
+    <!-- <script src="../dist/bundle.js"></script>   -->
+    <script src="../assets/bundle.js"></script>
+
   </body>
 
 </html>

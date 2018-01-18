@@ -7,13 +7,25 @@
     left: 0;
     background-color: #fff;
     border-bottom: 1px solid #ebebeb;
+    
 }
  .left {
-    /* flex:  */
+    flex-basis:65px;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
 }
 .right{
+    flex-basis:65px;
 
 }
 .content{
-
+    width: 100%;
+    flex-basis:auto;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+}
+.content span{
+    font-size: 1rem;
 }

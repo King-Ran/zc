@@ -1,0 +1,15 @@
+footer{
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 50;
+    display: inline-flex;
+    border-top: 1px solid #ebebeb;
+}
+.nav{
+    flex: 1;
+    text-align: center;
+}

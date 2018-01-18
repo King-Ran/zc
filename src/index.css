@@ -3,3 +3,15 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+@font-face{
+	font-family:"icomoon";
+  src:url('./fonts/icomoon.ttf')format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+.font{
+  font-family: "icomoon";
+  font-size: 24px;
+}

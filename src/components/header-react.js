@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 
-import headerCss from '../css/header.css';
+import '../css/header.css'
 // console.log(headerCss.console)
 
 export default class HeaderReact extends Component {
 
     render() {
+        // console.log(header)
         return (
-            <header className={headerCss.header}>
-                <div className={headerCss.left}>返回</div>
-                <div className={headerCss.right}>紫晨商城</div>
-                <div className={headerCss.content}>">"</div>
+            <header className='header'>
+                <div className='left'>返回</div>
+                <div className='content'><span>紫晨商城</span></div>
+                <div className='right'></div>
             </header>
         )
     }

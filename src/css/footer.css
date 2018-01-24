@@ -1,10 +1,11 @@
 footer{
     height: 50px;
-    width: 100%;
+    width: 20rem;
     position: fixed;
     right: 0;
     left: 0;
     bottom: 0;
+    margin: auto;
     z-index: 50;
     display: inline-flex;
     border-top: 1px solid #ebebeb;

@@ -1,6 +1,7 @@
 footer{
     height: 50px;
     width: 20rem;
+    background: #fff;
     position: fixed;
     right: 0;
     left: 0;
@@ -9,7 +10,7 @@ footer{
     z-index: 50;
     display: inline-flex;
     border-top: 1px solid #ebebeb;
-    background-image: #fff;
+    /* background-image: #fff; */
 }
 .item{
     flex: 1;
@@ -23,5 +24,9 @@ footer{
 }
 .nav-item{
     text-align: center;
-    font-size: .7rem;
+    font-size: .75rem;
+    /* font-weight: 600; */
+}
+.color-red{
+    color: red;
 }

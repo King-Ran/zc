@@ -7,12 +7,21 @@ import HeaderReact from './components/header-react';
 import NavReact from './components/footer-react';
 import ContentReact from './components/content-react';
 class App extends Component {
+  constructor() {
+    super();
+    this.state = { footerStatu: 'index' }
+    this.changeFooter = this.changeFooter.bind(this);
+  }
+  changeFooter(statu) {
+    this.setState({ footerStatu: statu })
+  }
+
   render() {
     return (
       <div className="App">
         <HeaderReact />
         <ContentReact />
-        <NavReact />
+        <NavReact onClick={this.changeFooter} status={this.state.footerStatu} />
       </div>
     );
   }

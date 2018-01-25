@@ -27,6 +27,16 @@
 
 }
 .productsItem{
+    display: -webkit-flex; /* Safari */
     display: flex;
+    flex-wrap: wrap;
     height: 100%;
+    width: 20rem;
+    overflow: hidden;
+    padding-bottom: 3rem;
+}
+.itemBox{
+    flex-wrap:wrap;
+    width: 49.5%;
+    padding-right: .5%;
 }

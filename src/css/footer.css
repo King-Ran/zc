@@ -9,8 +9,19 @@ footer{
     z-index: 50;
     display: inline-flex;
     border-top: 1px solid #ebebeb;
+    background-image: #fff;
 }
-.nav{
+.item{
     flex: 1;
     text-align: center;
+    background-image: #fff;
+    
+}
+.nav-icon{
+    height: 27px;
+    line-height: 31px;
+}
+.nav-item{
+    text-align: center;
+    font-size: .7rem;
 }

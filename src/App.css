@@ -1,7 +1,8 @@
 .App{
     padding: 0;
     background-color: #f3f3f3;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     width: 20rem;
     margin: auto;
     height: 100%

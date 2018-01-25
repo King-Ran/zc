@@ -38,7 +38,7 @@ export default class ContentReact extends Component {
     return (
       <div className=''>
         <div className='carousel slide'>
-          <Slider images={backgroundImage} auto='true' autoTime={2000} />
+          {/* <Slider images={backgroundImage} auto='true' autoTime={4000} /> */}
         </div>
         <div className='goodsTag'>
           {goodsData.map(item =>

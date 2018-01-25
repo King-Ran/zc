@@ -139,12 +139,13 @@ export default class Slider extends Component {
     const { startX, endX, translateX, minX, maxX, active } = this.moveInfo
     if (!active) return
     this.moveInfo.diffX = startX - x
-    let _translateX = endX - this.moveInfo.diffX
+    let _translateX = endX - this.moveInfo.diffX  
     _translateX = _translateX > minX ? minX : (_translateX < maxX ? maxX : _translateX)
     this.moveInfo.translateX = _translateX
     scroller.style.transform = `translate(${_translateX}px)`
     scroller.style.webkitTransform = `translate(${_translateX}px)`
   }
+
   onMoveEnd = (e) => {
     const {
             state: { index },

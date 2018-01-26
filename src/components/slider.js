@@ -9,13 +9,13 @@
 import React, { Component } from 'react'
 
 export default class Slider extends Component {
-  static defaultProps = {
-    index: 0,
-    auto: false,
-    autoTime: 3000,
-    images: [],
-    rate: 0.5,
-  }
+  // static defaultProps = {
+  //   index: 0,
+  //   auto: false,
+  //   autoTime: 3000,
+  //   images: [],
+  //   rate: 0.5,
+  // }
   style = {
     container: {
       position: 'relative',

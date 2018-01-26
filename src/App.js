@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
-import '../node_modules/normalize.css/normalize.css'
+import '../node_modules/normalize.css/normalize.css';
 
 import HeaderReact from './components/header-react';
 import NavReact from './components/footer-react';
 import ContentReact from './components/content-react';
-class App extends Component {
+import All from './page/all';
+
+
+export default class App extends Component {
   constructor() {
     super();
     this.state = { footerStatu: 'index' }
@@ -18,14 +26,28 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <HeaderReact />
-        <ContentReact />
-        <NavReact onClick={this.changeFooter} status={this.state.footerStatu} />
-      </div>
+      <Router >
+        <div className="App">
+          <Route excat path='/' component={Home} />
+          <Route path='/all' component={All} />
+
+          {/* <Home /> */}
+          <NavReact onClick={this.changeFooter} status={this.state.footerStatu} />
+        </div>
+      </Router>
     );
   }
 }
 
-export default App;
+const Home = () => (
+  <div>
+    <HeaderReact back={false} name='紫层商城' />
+    <ContentReact />
+  </div>
+)
 
+// const All = () => (
+//   <div>
+//     <HeaderReact back={false} name='紫层商城' />  
+//   </div>
+// )

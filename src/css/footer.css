@@ -21,6 +21,7 @@ footer{
 .nav-icon{
     height: 27px;
     line-height: 31px;
+    font-size: .75rem;    
 }
 .nav-item{
     text-align: center;

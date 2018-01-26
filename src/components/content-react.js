@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 
-import Slider from '../components/slider'
+// import Slider from '../components/slider'y
+
 import ProductItem from './product-item';
 
 import img1 from '../images/icon01.jpg';
@@ -36,7 +37,7 @@ export default class ContentReact extends Component {
     ]
 
     return (
-      <div className=''>
+      <div className='content'>
         <div className='carousel slide'>
           {/* <Slider images={backgroundImage} auto='true' autoTime={4000} /> */}
         </div>

@@ -21,3 +21,5 @@ body {
   font-family: "icomoon";
   font-size: 24px;
 }
+
+.element::-webkit-scrollbar {display:none}

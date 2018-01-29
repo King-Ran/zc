@@ -28,9 +28,11 @@
 }
 .itemPrice{
   font-size: .85rem;
+  line-height: 1.2rem;
   font-weight: 700;
   color: #e21d2d;
   border-top: 1px dashed #8a8a8a;
+  height: 1.2rem;
   display: flex;
   justify-content:space-between;
 }

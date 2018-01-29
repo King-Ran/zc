@@ -28,9 +28,9 @@ export default class App extends Component {
     return (
       <Router >
         <div className="App">
-          <Route excat path='/' component={Home} />
+          {/* <Route excat path='/' component={Home} /> */}
           <Route path='/all' component={All} />
-
+          {/* <Home /> */}
           {/* <Home /> */}
           <NavReact onClick={this.changeFooter} status={this.state.footerStatu} />
         </div>

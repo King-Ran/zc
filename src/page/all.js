@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
+
 import HeaderReact from '../components/header-react';
 import ContentSearch from '../components/content-search';
 import ProductItem from '../components/product-item';
+import '../css/all.css';
 
 export default class All extends Component {
   render() {
@@ -15,20 +17,25 @@ export default class All extends Component {
     ]
 
     return (
-      <div>
-        <HeaderReact back={false} name='紫层商城' />
-        <div style={{ "height": '135px', 'width': '100%' }}></div>
-        <div className='content_sreach'>
+      <div className='all'>
+        <div className='allHeader'>
+          <HeaderReact back={false} name='全部商品' />
+          <div style={{ "height": '50px', 'width': '100%' }}></div>
+          {/* <div className='content_sreach'> */}
           <ContentSearch />
+          {/* </div> */}
         </div>
+
         <div className='all_content'>
-          {
-            products.map(item =>
-              <div className='itemBox' key={item.id}  >
-                <ProductItem details={item} />
-              </div>
-            )
-          }
+          <div className='_all_content'>
+            {
+              products.map(item =>
+                <div className='itemBox' key={item.id}  >
+                  <ProductItem details={item} />
+                </div>
+              )
+            }
+          </div>
         </div>
 
 

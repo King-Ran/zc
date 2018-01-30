@@ -41,10 +41,14 @@ export default class FooterReact extends Component {
           </Link>
         </div>
         <div className={cs('item', { 'color-red': this.props.status === 'china' })} onClick={() => { this.handleClick('china') }} >
-          <div className='nav-icon'>
-            <span className="font">&#xe919;</span>
-          </div>
-          <div className='nav-item' >健康中国</div>
+          <Link to='/shoppingcats'>
+            <div className={cs({ 'color-red': this.props.status === 'china' })} >
+              <div className='nav-icon'>
+                <span className="font">&#xe919;</span>
+              </div>
+              <div className='nav-item' >健康中国</div>
+            </div>
+          </Link>
         </div>
         <div className={cs('item', { 'color-red': this.props.status === 'shppingCat' })} onClick={() => { this.handleClick('shppingCat') }} >
           <div className='nav-icon'>

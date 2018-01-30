@@ -13,6 +13,7 @@ import HeaderReact from './components/header-react';
 import NavReact from './components/footer-react';
 import ContentReact from './components/content-react';
 import All from './page/all';
+import ShoppingCat from './page/shoppoingCat';
 
 
 export default class App extends Component {
@@ -31,6 +32,9 @@ export default class App extends Component {
         <div className="App">
           <Route exact path='/' component={Home} />
           <Route path='/all' component={All} />
+          <Route path='/shoppingcats' component={ShoppingCat} />
+
+
           <NavReact onClick={this.changeFooter} status={this.state.footerStatu} />
         </div>
       </Router>

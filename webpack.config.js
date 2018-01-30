@@ -18,20 +18,22 @@ module.exports = {
             }
         },
         // css 私有化的
-        // {
-        //     test: /\.css$/,
-        //     loader: 'style-loader'
-        // }, {
-        //     test: /\.css$/,
-        //     loader: 'css-loader',
-        //     query: {
-        //         modules: true,
-        //         localIdentName: '[name]__[local]___[hash:base64:5]'
-        //     }
-        // },
+
+        
         {
-            test: /\.css$/, loader: 'style-loader!css-loader'
+            test: /\.css$/,
+            loader: 'style-loader'
+        }, {
+            test: /\.css$/,
+            loader: 'css-loader',
+            query: {
+                modules: true,
+                localIdentName: '[name]__[local]___[hash:base64:5]'
+            }
         },
+        // {
+        //     test: /\.css$/, loader: 'style-loader!css-loader'
+        // },
         {
             test: /\.(png|svg|jpg|gif)$/,
             loader: 'url-loader?limit=8192&name=images/[hash:8].[name].[ext]',

@@ -1,0 +1,23 @@
+.productListItem{
+    padding: .5rem;
+    height: 6rem;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #d9d9d9;
+    display: flex;
+    box-sizing: border-box;
+}
+.productListItemImg{
+    height: 5rem;
+    width: 5rem;
+    background-image: url(https://shop.zcdjk.com/images/good/8225cc52-4f9e-43c8-a57d-bce23296a5eb_thumb.jpg);
+}
+.productListItemText{
+    width: 13.5rem;
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+}
+.ListcatBackground{
+    
+}

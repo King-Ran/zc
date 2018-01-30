@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
   Route,
-  Link
+  Link,
+  // Switch
 } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
@@ -28,10 +29,8 @@ export default class App extends Component {
     return (
       <Router >
         <div className="App">
-          {/* <Route excat path='/' component={Home} /> */}
+          <Route exact path='/' component={Home} />
           <Route path='/all' component={All} />
-          {/* <Home /> */}
-          {/* <Home /> */}
           <NavReact onClick={this.changeFooter} status={this.state.footerStatu} />
         </div>
       </Router>

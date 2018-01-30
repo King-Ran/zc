@@ -10,6 +10,7 @@ footer{
     z-index: 50;
     display: inline-flex;
     border-top: 1px solid #ebebeb;
+    box-sizing: border-box;
     /* background-image: #fff; */
 }
 .item{

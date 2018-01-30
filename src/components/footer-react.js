@@ -21,19 +21,23 @@ export default class FooterReact extends Component {
     return (
       <footer>
         <div className={cs('item', { 'color-red': this.props.status === 'index' })} onClick={() => { this.handleClick('index') }} >
-          <Link to='/'>
-            <div className={'nav-icon'}>
-              <span className="font">&#xe926;</span>
+          <Link to='/' activeStyle={{ color: 'red', fontWeight: 700 }}>
+            <div className={cs({ 'color-red': this.props.status === 'index' })} >
+              <div className={'nav-icon'}>
+                <span className="font">&#xe926;</span>
+              </div>
+              <div className='nav-item'  >商城首页</div>
             </div>
-            <div className='nav-item'  >商城首页</div>
           </Link>
         </div>
         <div className={cs('item', { 'color-red': this.props.status === 'allProduct' })} onClick={() => { this.handleClick('allProduct') }} >
           <Link to='/all'>
-            <div className='nav-icon'>
-              <span className="font">&#xe922;</span>
+            <div className={cs({ 'color-red': this.props.status === 'allProduct' })} >
+              <div className='nav-icon'>
+                <span className="font">&#xe922;</span>
+              </div>
+              <div className='nav-item'  >全部商品</div>
             </div>
-            <div className='nav-item'  >全部商品</div>
           </Link>
         </div>
         <div className={cs('item', { 'color-red': this.props.status === 'china' })} onClick={() => { this.handleClick('china') }} >

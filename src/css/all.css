@@ -14,11 +14,31 @@
 .all_content{
     width: 100%;
     height: 100%;
-    /* display: flex;
-    flex-wrap:wrap; */
-    overflow: auto;
+    margin-top: 135px;
+    margin-bottom: 60px;
 }
 ._all_content{
     width: 100%;
     height: 100%;
+}
+.contentSearch{
+  position: fixed;
+  top: 50px;
+  left: 0;
+  right: 0;
+}
+.productBlock{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap:wrap;
+    overflow: auto;
+}
+.listBox{
+    width: 100%;
+    height: 100%;
+
+}
+.listBox>p {
+    padding: 0;
 }

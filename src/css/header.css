@@ -1,12 +1,14 @@
 .header{
     height: 50px;
-    width: 100%;
+    width: 20rem;
      /* Safari */
-    /* display: -webkit-flex; */
+    display: -webkit-flex;
     display: flex;
     position: fixed;
     top: 0;
     left: 0;
+    right: 0;
+    margin: 0 auto;
     z-index: 500;
     background-color: #fff;
     border-bottom: 1px solid #ebebeb;

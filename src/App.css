@@ -1,9 +1,25 @@
+#root{
+    height:100%;
+    width: 20rem;
+    margin: 0 auto;
+}
 .App{
     padding: 0;
     background-color: #f3f3f3;
     overflow-y: hidden;
     overflow-x: hidden;
-    width: 20rem;
     margin: auto;
-    height: 100%
+    height: 100%;
+    width: 20rem;    
+    position: relative;
+}
+
+.defaultBackgroud{
+    background-color: #fff;
+}
+.boxSize{
+    box-sizing: border-box;
+}
+.input {
+
 }

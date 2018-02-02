@@ -7,10 +7,10 @@ import {
 } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
-import '../node_modules/normalize.css/normalize.css';
+// import '../node_modules/normalize.css/normalize.css';
 
 import HeaderReact from './components/header-react';
-import NavReact from './components/footer-react';
+import FooterReact from './components/footer-react';
 import ContentReact from './components/content-react';
 import All from './page/all';
 import ShoppingCat from './page/shoppoingCat';
@@ -35,7 +35,7 @@ export default class App extends Component {
           <Route path='/shoppingcats' component={ShoppingCat} />
 
 
-          <NavReact onClick={this.changeFooter} status={this.state.footerStatu} />
+          <FooterReact onClick={this.changeFooter} status={this.state.footerStatu} />
         </div>
       </Router>
     );

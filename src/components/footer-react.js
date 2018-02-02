@@ -21,7 +21,7 @@ export default class FooterReact extends Component {
     return (
       <footer>
         <div className={cs('item', { 'color-red': this.props.status === 'index' })} onClick={() => { this.handleClick('index') }} >
-          <Link to='/' activeStyle={{ color: 'red', fontWeight: 700 }}>
+          <Link to='/' >
             <div className={cs({ 'color-red': this.props.status === 'index' })} >
               <div className={'nav-icon'}>
                 <span className="font">&#xe926;</span>

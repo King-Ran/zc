@@ -32,7 +32,7 @@
     height: 100%;
     display: flex;
     flex-wrap:wrap;
-    overflow: auto;
+    /* overflow: auto; */
 }
 .listBox{
     width: 100%;
@@ -41,4 +41,7 @@
 }
 .listBox>p {
     padding: 0;
+}
+.fontColorGray{
+    color:#A8A8A8;
 }

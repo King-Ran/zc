@@ -8,7 +8,7 @@
 
 .allHeader{
     height: 100%;
-    width: 100%;
+    width: 20rem;
     flex: 0%;
 }
 .all_content{
@@ -44,4 +44,11 @@
 }
 .fontColorGray{
     color:#A8A8A8;
+}
+.flaotBox::after{
+    content: '.';
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
 }

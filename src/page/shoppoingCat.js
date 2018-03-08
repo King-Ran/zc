@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { render } from 'react-dom';
-
+import { Dialog } from 'react-weui';
 import HeaderReact from '../components/header-react';
 import ShoppingCatItems from '../components/shpping-cat-item';
 
@@ -11,7 +11,27 @@ export default class ShoppingCat extends Component {
     this.SwitchAllStatus = this.SwitchAllStatus.bind(this);
     this.switchStatus = this.switchStatus.bind(this);
     this.isRed = this.isRed.bind(this);
-    this.state = { isAll: false }
+    this.state = { 
+      isAll: false ,
+      allPrice:0,
+      showDiaLog:false,
+      deleteItemId:-1,
+      selectLength:0,
+      dialogStyle:{
+      title: '提示',
+      buttons: [
+          {
+              type: 'default',
+              label: 'Cancel',
+              onClick: this.hideDialog.bind(this)
+          },
+          {
+              type: 'primary',
+              label: 'Ok',
+              onClick: this.deleteItem.bind(this)
+          }
+      ]
+    }}
     this.data = [
       { status: true, id: '1', name: '王老吉荣誉产品顶级阿胶红枣饮料310ml*12瓶/箱', imgUrl: '', number: 1, price: '60' },
       { status: true, id: '2', name: '王老吉荣誉产品顶级阿胶红枣饮料310ml*12瓶/箱', imgUrl: '', number: 1, price: '60' },
@@ -26,7 +46,7 @@ export default class ShoppingCat extends Component {
   componentDidMount() {
 
     this.setState({ isAll: this.isRed() });
-    console.log(this.state.isAll);
+    this.getAllPrice();
   }
   numChange(id, isAdd, number) {
 
@@ -34,15 +54,18 @@ export default class ShoppingCat extends Component {
       number = number === '' ? 1 : number;
       for (let i = 0, length = this.data.length; i < length; i++) {
         if (this.data[i].id === id) {
-
-          return this.data[i].number = number;
+           this.data[i].number = number;
+           this.getAllPrice();
+           return ;
         }
       }
     }
     else {
       for (let i = 0, length = this.data.length; i < length; i++) {
         if (this.data[i].id === id) {
-          return isAdd ? ++this.data[i].number : --this.data[i].number;
+           isAdd ? ++this.data[i].number : --this.data[i].number;
+           this.getAllPrice();
+           return ;
         }
       }
     }
@@ -53,20 +76,53 @@ export default class ShoppingCat extends Component {
       v.status = !status;
       return v
     })
-
-    console.log(this.data);
-    console.log(status);
+    this.getAllPrice();
+    return;
   }
   switchStatus(id) {
     console.log(id);
     for (let i = 0, length = this.data.length; i < length; i++) {
       if (this.data[i].id === id) {
         this.data[i].status = !this.data[i].status;
-        // this.isRed();
         this.setState({ isAll: this.isRed() })
-        console.log(this.data[i]);
       }
     }
+    this.getAllPrice();
+  }
+  deleteItem(){
+  const id = this.state.deleteItemId
+  for (let i = 0, length = this.data.length; i < length; i++) {
+  if (this.data[i].id === id) {
+    this.data.splice(i,1)
+    console.log('delete '+id);
+    this.setState({ isAll: this.isRed(),showDialog:false ,deleteItemId:-1 });
+    this.getAllPrice();
+    return;
+  }
+}
+  this.setState({  deleteItemId:-1 })
+  return ;
+  }
+  hideDialog(){
+    this.setState({showDialog:false,deleteItemId:-1})
+  }
+  showDialog(id){
+    this.setState({
+      showDialog:true,
+      deleteItemId:id
+    })
+  }
+  getAllPrice(){
+    let price =0;
+    let length = 0;
+    this.data.map(v=> {
+      if(v.status){
+        price +=(v.price*v.number);
+        length +=v.number
+      }
+      return v});
+      this.setState({allPrice:price,selectLength:length});
+      return price;
   }
   isRed() {
     for (let i of this.data) {
@@ -92,12 +148,27 @@ export default class ShoppingCat extends Component {
             </div>
 
           </div>
-          <div className='catContentItem' style={{ height: '100%', width: '100%',paddingBottom:'60px' }}>
+          <div className='catContentItem' style={{ height: '100%', width: '100%', marginBottom: '10px' }}>
             {catData.map(item => (
-              <ShoppingCatItems numberChang={this.numChange} chckedStatus={this.switchStatus} key={item.id} data={item} />
+              <ShoppingCatItems numberChang={this.numChange} delItem={this.showDialog.bind(this)}  chckedStatus={this.switchStatus} key={item.id} data={item} />
             ))}
           </div>
+          <div className='catPrice' style={{height:'2rem',width:'100%',lineHeight:"2rem",fontSize: '.8rem', display:'flex', marginBottom:'60px',backgroundColor:'#fff',position:'relative'}}>
+          <div  style={{ height: '2rem', width: '2rem', textAlign: 'center', marginTop: 'auto', marginBottom: 'auto' }}>
+          <span className='font' style={{ fontSize: '.8rem', color: 'red', paddingRight: '5px' }} >&#xe90d;</span>
+          </div>
+          <div style={{width:'2.5rem', textAlign:'center',borderRight:'solid #a8a8a8 1px'}}>全选</div>
+          <div style={{paddingLeft:'8px'}}>总价：<span style={{color:'red'}}>{this.state.allPrice} </span> 元
+          </div>
+          <div style={{flexShrink:1}}></div>
+          <div style={{width:'5.5rem',position:'absolute',top:0,right:0,backgroundColor:'red',textAlign:'center',color:'white'}}>
+          结算({this.state.selectLength})
+          </div>
+          </div>
         </div>
+        <Dialog type="ios" title={this.state.dialogStyle.title} buttons={this.state.dialogStyle.buttons} show={this.state.showDialog}>
+          确认删除？
+        </Dialog>
       </div>
     )
   }

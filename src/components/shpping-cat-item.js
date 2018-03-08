@@ -16,7 +16,6 @@ export default class ShoppingCatItems extends Component {
     this.setState({ data: this.props.data });
   }
   handleChange(event, id) {
-    console.log(11111111);
     console.log(event.target.value);
     const value = event.target.value;
     this.props.numberChang(id, false, value);
@@ -24,6 +23,9 @@ export default class ShoppingCatItems extends Component {
   }
   handleChcked(id) {
     this.props.chckedStatus(id);
+  }
+  deleteItem(id){
+    this.props.delItem(id);
   }
   render() {
     return (
@@ -39,7 +41,7 @@ export default class ShoppingCatItems extends Component {
           <div style={{ height: '4rem', width: '13rem', padding: '0 .5rem' }}>
             <div style={{ height: '2.5rem', width: '100%', display: 'flex' }}>
               <div style={{ fontSize: '.75rem', width: '11rem', fontWeight: '400' }}>{this.props.data.name}</div>
-              <div style={{ fontSize: '.8rem', width: '2rem', height: '100%', textAlign: 'center', }} className='font' >
+              <div onClick={()=>{this.deleteItem(this.props.data.id)}} style={{ fontSize: '.8rem', width: '2rem', height: '100%', textAlign: 'center', }} className='font' >
                 {this.props.data.status === true ?
                   <span style={{ color: "red" }}> &#xe91a;</span> :
                   <span>&#xe91a;</span>

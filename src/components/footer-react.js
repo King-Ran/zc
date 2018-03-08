@@ -8,21 +8,13 @@ import cs from 'classnames'  // css 插件 see https://github.com/JedWatson/clas
 export default class FooterReact extends Component {
   constructor(props) {
     super(props);
-    // this.state = { status: 'index' }
-    this.handleClick = this.handleClick.bind(this)
   }
-
-  handleClick(status) {
-    this.props.onClick(status);
-  }
-
-
   render() {
     return (
       <footer>
-        <div className={cs('item', { 'color-red': this.props.status === 'index' })} onClick={() => { this.handleClick('index') }} >
+        <div className={cs('item', { 'color-red': this.props.status === '/' })}  >
           <Link to='/' >
-            <div className={cs({ 'color-red': this.props.status === 'index' })} >
+            <div className={cs({ 'color-red': this.props.status === '/' })} >
               <div className={'nav-icon'}>
                 <span className="font">&#xe926;</span>
               </div>
@@ -30,9 +22,9 @@ export default class FooterReact extends Component {
             </div>
           </Link>
         </div>
-        <div className={cs('item', { 'color-red': this.props.status === 'allProduct' })} onClick={() => { this.handleClick('allProduct') }} >
+        <div className={cs('item', { 'color-red': this.props.status === '/all' })}  >
           <Link to='/all'>
-            <div className={cs({ 'color-red': this.props.status === 'allProduct' })} >
+            <div className={cs({ 'color-red': this.props.status === '/all' })} >
               <div className='nav-icon'>
                 <span className="font">&#xe922;</span>
               </div>
@@ -40,9 +32,9 @@ export default class FooterReact extends Component {
             </div>
           </Link>
         </div>
-        <div className={cs('item', { 'color-red': this.props.status === 'china' })} onClick={() => { this.handleClick('china') }} >
-          <Link to='/shoppingcats'>
-            <div className={cs({ 'color-red': this.props.status === 'china' })} >
+        <div className={cs('item', { 'color-red': this.props.status === '/china' })}>
+          <Link to='/china'>
+            <div className={cs({ 'color-red': this.props.status === '/china' })} >
               <div className='nav-icon'>
                 <span className="font">&#xe919;</span>
               </div>
@@ -50,19 +42,21 @@ export default class FooterReact extends Component {
             </div>
           </Link>
         </div>
-        <div className={cs('item', { 'color-red': this.props.status === 'shppingCat' })} onClick={() => { this.handleClick('shppingCat') }} >
-          <div className='nav-icon'>
-            <span className="font">&#xe932;</span>
-          </div>
-          <div className='nav-item'  >购物车</div>
+        <div className={cs('item', { 'color-red': this.props.status === '/shoppingcats' })}  >
+          <Link to='/shoppingcats'>
+            <div className={cs('nav-icon', { 'color-red': this.props.status === '/shoppingcats' })}>
+              <span className="font">&#xe932;</span>
+            </div>
+            <div className='nav-item'  >购物车</div>
+          </Link>
         </div>
-        <div className={cs('item', { 'color-red': this.props.status === 'person' })} onClick={() => { this.handleClick('person') }} >
+        <div className={cs('item', { 'color-red': this.props.status === '/prison' })}  >
           <div className='nav-icon'>
             <span className="font">&#xe913;</span>
           </div>
           <div className='nav-item'  >个人中心</div>
         </div>
-      </footer>
+      </footer >
     )
   }
 }

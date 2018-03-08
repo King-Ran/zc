@@ -20,37 +20,49 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = { footerStatu: 'index' }
-    this.changeFooter = this.changeFooter.bind(this);
   }
-  changeFooter(statu) {
-    this.setState({ footerStatu: statu })
-  }
+
 
   render() {
     return (
       <Router >
         <div className="App">
           <Route exact path='/' component={Home} />
-          <Route path='/all' component={All} />
-          <Route path='/shoppingcats' component={ShoppingCat} />
-
-
-          <FooterReact onClick={this.changeFooter} status={this.state.footerStatu} />
+          <Route path='/all' component={_All} />
+          <Route path='/shoppingcats' component={_ShoppingCat} />
         </div>
       </Router>
     );
   }
 }
 
-const Home = () => (
+const Home = ({ match }) => {
+  console.log(match, 111111111);
+  return (
+    <div>
+      <HeaderReact back={false} name='紫层商城' />
+      <ContentReact />
+      <FooterReact status={match.url} />
+    </div>
+  )
+}
+
+
+
+const _All = ({ match }) => {
+  console.log(match);
+  return (
+    <div>
+      {/* <HeaderReact back={false} name='紫层商城' /> */}
+      <All />
+      <FooterReact status={match.url} />
+    </div>
+  )
+}
+const _ShoppingCat = ({ match }) => (
   <div>
-    <HeaderReact back={false} name='紫层商城' />
-    <ContentReact />
+    {/* <HeaderReact back={false} name='购物车' /> */}
+    <ShoppingCat />
+    <FooterReact status={match.url} />
   </div>
 )
-
-// const All = () => (
-//   <div>
-//     <HeaderReact back={false} name='紫层商城' />  
-//   </div>
-// )

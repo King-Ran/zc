@@ -2,14 +2,14 @@
     height: 50px;
     width: 20rem;
      /* Safari */
-    display: -webkit-flex;
-    display: flex;
+    /* display: -webkit-flex;
+    display: flex; */
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     margin: 0 auto;
-    z-index: 500;
+    z-index: 1000;
     background-color: #fff;
     border-bottom: 1px solid #ebebeb;
     box-sizing: border-box;
@@ -19,13 +19,21 @@
     text-align: center;
     font-size: 1rem;
     height: 50px;
+    width: 4rem;
     line-height: 50px;
 }
+.f_l{
+    float: left;
+}
+.f_r{
+    float: right;
+}
 .right{
-    flex-basis:65px;
+    height: 50px;
+    width: 4rem;
 }
 .top-content{
-    width: 100%;
+    width: 12rem;
     flex-basis:auto;
     text-align: center;
     height: 50px;

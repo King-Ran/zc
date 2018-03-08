@@ -27,7 +27,7 @@ export default class ProductItem extends Component {
         <div className='itemPrice item-font'>
           <span>{this.props.details.price}</span>
           <div className='catBackground' >
-          <span className="font fontCat" style={{'font-size':'.7rem'}}>&#xe932;</span>
+          <span className="font fontCat" style={{'fontSize':'.7rem'}}>&#xe932;</span>
           </div>
         </div>
         <div></div>

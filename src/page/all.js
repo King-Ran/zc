@@ -6,6 +6,9 @@ import ContentSearch from '../components/content-search';
 import ProductItem from '../components/product-item';
 import ProductList from '../components/products-list'
 import '../css/all.css';
+//import styles
+import 'weui';
+import 'react-weui/build/packages/react-weui.css';
 
 export default class All extends Component {
   constructor() {

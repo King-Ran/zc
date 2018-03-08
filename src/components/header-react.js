@@ -17,10 +17,10 @@ export default class HeaderReact extends Component {
             Back = <span></span>
         }
         return (
-            <header className='header'>
-                <div className='font left' >{Back}</div>
-                <div className='top-content'><span>{this.props.name}</span></div>
-                <div className='right'></div>
+            <header className='header flaotBox'>
+                <div className='font left f_l' >{Back}</div>
+                <div className='top-content f_l'><span>{this.props.name}</span></div>
+                <div className='right f_l'></div>
             </header>
         )
     }

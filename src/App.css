@@ -4,9 +4,7 @@
     margin: 0 auto;
 }
 body{
-    position: fixed;
-	top: 0;
-	left: 0;
+    position: relative;
 }
 .App{
     padding: 0;
